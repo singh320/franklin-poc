@@ -3,7 +3,7 @@ main .hero-container > div {
 }
   
 main .hero-container {
-  padding: 0;
+  padding: 35px 0px 0px 0px;
 }
 
 .hero {

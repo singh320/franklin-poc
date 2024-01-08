@@ -680,6 +680,21 @@ async function waitForLCP(lcpBlocks) {
   });
 }
 
+/**
+ * Loads a block named 'notification-banner'
+ * @param {Element} main main element
+ * @returns {Promise}
+ */
+async function loadNotificationBanner(main) {
+  const newDivWrapper = document.createElement('div');
+  // main.append(newDivWrapper)
+  main.insertBefore(newDivWrapper, main.firstChild);
+  const notificationBannerBlock = buildBlock('notification-banner', '');
+  newDivWrapper.append(notificationBannerBlock);
+  decorateBlock(notificationBannerBlock);
+  return loadBlock(notificationBannerBlock);
+}
+
 init();
 
 export {
@@ -706,4 +721,5 @@ export {
   toClassName,
   updateSectionsStatus,
   waitForLCP,
+  loadNotificationBanner,
 };
